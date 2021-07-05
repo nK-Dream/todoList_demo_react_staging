@@ -12,9 +12,9 @@ export default class Footer extends Component{
         this.props.checkAll(e.target.checked)
     }
     render(){
-        const { todoList } = this.props
-        const doneCount = todoList.reduce((preValue,current)=> preValue + (current.done ? 1 : 0),0)
-        const total = todoList.length
+        const { todos } = this.props
+        const doneCount = todos.reduce((preValue,current)=> preValue + (current.done ? 1 : 0),0)
+        const total = todos.length
         return(
             <div className='footer'>
                 <input type="checkbox" checked={(doneCount === total) && doneCount!==0} onChange={this.checkAll}/>
